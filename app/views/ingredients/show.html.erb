@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ingredient.name %>
+</p>
+
+<p>
+  <strong>Unit:</strong>
+  <%= @ingredient.unit %>
+</p>
+
+<p>
+  <strong>Default expiry in days:</strong>
+  <%= @ingredient.default_expiry_in_days %>
+</p>
+
+<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Back', ingredients_path %>
