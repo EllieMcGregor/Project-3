@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :favourites
+
   resources :recipes
 
   resources :quantities
