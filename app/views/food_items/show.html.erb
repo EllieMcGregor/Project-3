@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @food_item.name %>
+</p>
+
+<p>
+  <strong>Expiry date:</strong>
+  <%= @food_item.expiry_date %>
+</p>
+
+<p>
+  <strong>Food item image:</strong>
+  <%= @food_item.food_item_image %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @food_item.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_food_item_path(@food_item) %> |
+<%= link_to 'Back', food_items_path %>
