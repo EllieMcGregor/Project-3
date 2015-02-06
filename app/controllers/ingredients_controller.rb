@@ -12,6 +12,7 @@ class IngredientsController < ApplicationController
     respond_with(@ingredient)
   end
 
+
   def new
     @ingredient = Ingredient.new
     respond_with(@ingredient)
