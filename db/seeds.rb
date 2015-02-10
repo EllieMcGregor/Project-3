@@ -11,8 +11,10 @@ User.delete_all
 FoodItem.delete_all
 Ingredient.delete_all
 
-
+puts "Creating admin"
 ellie = User.create!(first_name: "Ellie", last_name: "McGregor", email: "ellie@ga.com", password: "password", role: :admin)
+
+puts "Creating general users"
 
 50.times do
   user = User.create!(first_name: "#{Faker::Name.first_name}", last_name: "#{Faker::Name.last_name}", email: "#{Faker::Internet.email}", password: "password", user_image: "#{Faker::Avatar.image}", role: :normal)
@@ -22,6 +24,8 @@ end
 users = User.all
 user = users.sample
 
+puts "Creating Ingredients"
+
 50.times do
   ingredient = Ingredient.create!(name: "#{Faker::Name.name}", unit: "#{Faker::Name.name}",default_expiry_in_days: "#{Faker::Date.forward(7)}")
 end
@@ -29,9 +33,13 @@ end
 ingredients = Ingredient.all
 ingredient = ingredients.sample
 
+puts "Creating Food items"
+
 50.times do
   food_item = FoodItem.create!(name: "#{Faker::Name.title}", expiry_date: "#{Faker::Date.forward(5)}", food_item_image: "#{Faker::Avatar.image}", user: users.sample, ingredient: ingredients.sample )
 end
+
+puts "Creating Recipes"
 
 50.times do
   recipe = Recipe.create!(name: "#{Faker::Name.title}", method: "#{Faker::Lorem.paragraph}", desciption: "#{Faker::Lorem.paragraph}", recipe_image: "#{Faker::Avatar.image}", category: "healthy" )
@@ -40,13 +48,19 @@ end
 recipes = Recipe.all
 recipe = recipes.sample
 
+puts "Creating Favourites"
+
 10.times do
   favourite = Favourite.create!(recipe: recipes.sample, user: users.sample )
 end
 
+puts "Creating Nutrition"
+
 15.times do
   nutrition = Nutrition.create!( serving: "#{Faker::Number.number(2)}", calorie: "#{Faker::Number.number(3)}", carbohydrate: "#{Faker::Number.number(2)}", sodium: "#{Faker::Number.number(1)}", fiber: "#{Faker::Number.number(1)}", protein:"#{Faker::Number.number(2)}", ingredient: ingredients.sample )
 end
+
+puts "Creating Quantities"
 
 15.times do
   quantity = Quantity.create!(recipe: recipes.sample, ingredient: ingredients.sample, amount: "#{Faker::Number.number(1)}")
