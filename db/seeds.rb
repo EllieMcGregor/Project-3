@@ -48,6 +48,10 @@ end
   nutrition = Nutrition.create!( serving: "#{Faker::Number.number(2)}", calorie: "#{Faker::Number.number(3)}", carbohydrate: "#{Faker::Number.number(2)}", sodium: "#{Faker::Number.number(1)}", fiber: "#{Faker::Number.number(1)}", protein:"#{Faker::Number.number(2)}", ingredient: ingredients.sample )
 end
 
+15.times do
+  quantity = Quantity.create!(recipe: recipes.sample, ingredient: ingredients.sample, amount: "#{Faker::Number.number(1)}")
+end
+
 
 
 
