@@ -9,6 +9,8 @@
       <th>Sodium</th>
       <th>Fiber</th>
       <th>Protein</th>
+      <th>Ingredient_id</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +24,7 @@
         <td><%= nutrition.sodium %></td>
         <td><%= nutrition.fiber %></td>
         <td><%= nutrition.protein %></td>
+        <td><%= nutrition.ingredient_id %></td>
         <td><%= link_to 'Show', nutrition %></td>
         <td><%= link_to 'Edit', edit_nutrition_path(nutrition) %></td>
         <td><%= link_to 'Destroy', nutrition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
