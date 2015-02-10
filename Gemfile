@@ -1,5 +1,6 @@
-source 'https://rubygems.org'
 
+source 'https://rubygems.org'
+gem 'ransack'
 gem 'faker', '~> 1.4.3'
 gem 'devise'
 gem 'cancancan'
