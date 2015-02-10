@@ -51,19 +51,3 @@ end
 15.times do
   quantity = Quantity.create!(recipe: recipes.sample, ingredient: ingredients.sample, amount: "#{Faker::Number.number(1)}")
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
