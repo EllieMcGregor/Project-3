@@ -20,12 +20,6 @@
 </p>
 
 
-
-<p>
-  <strong>Ingredient:</strong>
-  <%= @food_item.ingredient.name%>
-</p>
-
 <%= link_to 'Edit', edit_food_item_path(@food_item) %> |
 <td> <%= link_to 'Delete', @food_item, method: :delete, data: { confirm: 'Are you sure?' }%></h3></td>
 <%= link_to 'Back', food_items_path %>

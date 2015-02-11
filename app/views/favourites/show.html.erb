@@ -2,12 +2,13 @@
 
 <p>
   <strong>Recipe:</strong>
-  <%= @favourite.recipe %>
+  <%= @favourite.recipe.name %>
+  <%= link_to recipe_path %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @favourite.user %>
+  <%= @favourite.user.first_name %>
 </p>
 
 <%= link_to 'Edit', edit_favourite_path(@favourite) %> |

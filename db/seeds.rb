@@ -39,7 +39,7 @@ user = users.sample
 puts "Creating Ingredients"
 
 30.times do
-  ingredient = Ingredient.create!(name: foodnames.sample, unit: units.sample, default_expiry_in_days: "#{Faker::Date.forward(7)}")
+  ingredient = Ingredient.create!(name: foodnames.sample, unit: units.sample , default_expiry_in_days: "#{Faker::Date.forward(7)}")
 end
 
 ingredients = Ingredient.all
