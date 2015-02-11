@@ -7,11 +7,26 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class='login'>
+    <% if user_signed_in? %>
+    <%= current_user.email %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 
+    <% else %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Register", new_user_registration_path %>
+    <% end %>
+  </div>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-
-<%= yield %>
+  <ul>
+    <%= link_to 'Ingredients', ingredients_path %>
+    <%= link_to 'Recipes', recipes_path %>
+    <%= link_to 'Quantities', quantities_path %>
+    <%= link_to 'Nutritions', nutritions_path %>
+    <%= link_to 'Favourites', favourites_path %>
+  </ul>
+  <%= yield %>
 
 </body>
 </html>
