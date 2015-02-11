@@ -10,6 +10,8 @@ puts "Deleting all existing data"
 User.delete_all
 FoodItem.delete_all
 Ingredient.delete_all
+Recipe.delete_all
+Quantity.delete_all
 
 puts "Creating admin"
 ellie = User.create!(first_name: "Ellie", last_name: "McGregor", email: "ellie@ga.com", password: "password", role: :admin)
@@ -56,12 +58,12 @@ end
 
 puts "Creating Nutrition"
 
-15.times do
+50.times do
   nutrition = Nutrition.create!( serving: "#{Faker::Number.number(2)}", calorie: "#{Faker::Number.number(3)}", carbohydrate: "#{Faker::Number.number(2)}", sodium: "#{Faker::Number.number(1)}", fiber: "#{Faker::Number.number(1)}", protein:"#{Faker::Number.number(2)}", ingredient: ingredients.sample )
 end
 
 puts "Creating Quantities"
 
-15.times do
+50.times do
   quantity = Quantity.create!(recipe: recipes.sample, ingredient: ingredients.sample, amount: "#{Faker::Number.number(1)}")
 end

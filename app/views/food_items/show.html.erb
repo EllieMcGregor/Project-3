@@ -9,12 +9,10 @@
   <strong>Expiry date:</strong>
   <%= @food_item.expiry_date%> days
 </p>
-
 <p>
   <strong>Food item image:</strong>
   <%= link_to image_tag(@food_item.food_item_image.thumb.url), @food_item.food_item_image.detail.url%>
 </p>
-
 <p>
   <strong>User:</strong>
   <%= current_user.try(:first_name) %>
@@ -25,7 +23,7 @@
 
 <p>
   <strong>Ingredient:</strong>
-  <%= @food_item.ingredient_id %>
+  <%= @food_item.ingredient.name%>
 </p>
 
 <%= link_to 'Edit', edit_food_item_path(@food_item) %> |

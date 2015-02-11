@@ -1,0 +1,8 @@
+<tr>
+  <td><%= quantity.recipe.name %></td>
+  <td><%= quantity.try(:ingredient).try(:name) %></td>
+  <td><%= quantity.amount %></td>
+  <td><%= link_to 'Show', quantity %></td>
+  <td><%= link_to 'Edit', edit_quantity_path(quantity) %></td>
+  <td><%= link_to 'Destroy', quantity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

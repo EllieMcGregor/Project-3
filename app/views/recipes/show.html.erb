@@ -25,5 +25,8 @@
   <%= @recipe.category %>
 </p>
 
+<%= render @recipe.ingredients %>
+<%= render @recipe.quantities %>
+
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

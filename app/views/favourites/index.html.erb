@@ -12,8 +12,8 @@
   <tbody>
     <% @favourites.each do |favourite| %>
       <tr>
-        <td><%= favourite.recipe_id %></td>
-        <td><%= favourite.user_id %></td>
+        <td><%= favourite.recipe.name %></td>
+        <td><%= favourite.user.first_name %></td>
         <td><%= link_to 'Show', favourite %></td>
         <td><%= link_to 'Edit', edit_favourite_path(favourite) %></td>
         <td><%= link_to 'Destroy', favourite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
