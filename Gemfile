@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'rmagick'
 gem 'carrierwave', '0.9.0'
 gem 'ransack'
 gem 'faker', '~> 1.4.3'
