@@ -47,6 +47,6 @@ class FoodItemsController < ApplicationController
     end
 
     def food_item_params
-      params.require(:food_item).permit(:name, :expiry_date, :food_item_image, :user_id)
+      params.require(:food_item).permit(:name, :expiry_date, :food_item_image, :remote_food_item_image_url, :user_id)
     end
 end

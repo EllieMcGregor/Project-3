@@ -12,7 +12,7 @@
 
 <p>
   <strong>Food item image:</strong>
-  <%= @food_item.food_item_image %>
+  <%= link_to image_tag(@food_item.food_item_image.thumb.url), @food_item.food_item_image.detail.url %>
 </p>
 
 <p>
