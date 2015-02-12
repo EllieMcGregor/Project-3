@@ -12,10 +12,11 @@
  *
  *= require_self
  */
- 
+
  @import "bourbon";
  @import "base/base";
  @import "neat";
+ @import "navbar.css.scss";
  @import "favourites.css.scss";
  @import "food_items.css.scss";
  @import "ingredients.css.scss";
