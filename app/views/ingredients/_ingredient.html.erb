@@ -2,7 +2,7 @@
   <td><%= ingredient.name %></td>
   <td><%= ingredient.unit %></td>
   <td><%= ingredient.default_expiry_in_days %></td>
-  <td><%= ingredient.nutrition.calorie %></td>
+  <td><strong> Calories </strong><%= ingredient.nutrition.calorie.inspect %></td>
   <td><%= link_to 'Show', ingredient %></td>
   <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
   <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
