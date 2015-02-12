@@ -17,21 +17,7 @@
   </thead>
 
   <tbody>
-    <% @nutritions.each do |nutrition| %>
-      <tr>
-        <td><%= nutrition.try(:ingredient).try(:name)  %></td>
-        <td><%= nutrition.serving %></td>
-        <td><%= nutrition.calorie %></td>
-        <td><%= nutrition.carbohydrate %></td>
-        <td><%= nutrition.sodium %></td>
-        <td><%= nutrition.fiber %></td>
-        <td><%= nutrition.protein %></td>
-        
-        <td><%= link_to 'Show', nutrition %></td>
-        <td><%= link_to 'Edit', edit_nutrition_path(nutrition) %></td>
-        <td><%= link_to 'Destroy', nutrition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+    <%= render @nutritions %>
   </tbody>
 </table>
 

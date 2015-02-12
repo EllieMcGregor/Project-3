@@ -16,8 +16,10 @@
 <p>
   <strong>User:</strong>
   <%= current_user.try(:first_name) %>
-<!-- @food_item.user_id -->
+  <!-- @food_item.user_id -->
 </p>
+
+
 
 
 <%= link_to 'Edit', edit_food_item_path(@food_item) %> |
