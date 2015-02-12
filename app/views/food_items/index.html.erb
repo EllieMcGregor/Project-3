@@ -1,14 +1,4 @@
 <h1>Home = Listing food items in your fridge</h1>
-
-<%= search_form_for @q do |f| %>
-  <div class="filter name">
-    <%= f.text_field :name_cont, placeholder: "Search for food in your fridge " %>
-  </div>
-    <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-
   <tbody>
     <% @food_items.each do |food_item| %>
       <tr>

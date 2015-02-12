@@ -6,9 +6,8 @@ class FoodItemsController < ApplicationController
   respond_to :html
 
   def index
-    @q = FoodItem.search(params[:q])
-    @food_items = @q.result(distinct: true)
 
+    @food_items = FoodItem.all
     respond_with(@food_items)
     # @food_items = FoodItem.all
     

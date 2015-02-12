@@ -4,8 +4,11 @@ class IngredientsController < ApplicationController
   respond_to :html
 
   def index
-    @ingredients = Ingredient.all
-    respond_with(@ingredients)
+    @ingredients = Ingredient.all    
+    @q = Ingredient.search(params[:q])
+    @ingredients = @q.result(distinct: true)
+
+    respond_with(@ingredient)
   end
 
   def show

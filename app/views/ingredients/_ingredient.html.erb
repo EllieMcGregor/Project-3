@@ -2,7 +2,17 @@
   <td><%= ingredient.name %></td>
   <td><%= ingredient.unit %></td>
   <td><%= ingredient.default_expiry_in_days %></td>
-  <td><strong> Calories </strong><%= ingredient.nutrition.calorie.inspect %></td>
+  <td><%= ingredient.nutrition.try :calorie %></td>
+<!--   <td><tr>
+    <td><%= ingredient.nutrition.try(:ingredient).try(:name)  %></td>
+    <td><%= ingredient.nutrition.try :serving %></td>
+    <td><%= ingredient.nutrition.try :calorie %></td>
+    <td><%= ingredient.nutrition.try :carbohydrate %></td>
+    <td><%= ingredient.nutrition.try :sodium %></td>
+    <td><%= ingredient.nutrition.try :fiber %></td>
+    <td><%= ingredient.nutrition.try :protein %></td>
+  </tr>
+  </td> -->
   <td><%= link_to 'Show', ingredient %></td>
   <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
   <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>

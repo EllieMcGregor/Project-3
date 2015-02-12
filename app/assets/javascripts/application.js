@@ -33,16 +33,33 @@ $(document).ready(function() {
 
 //search food jscript
 $(function(){
-  $('#food_item_search').
+  $('#search_form').
     on('ajax:success', function(event, data, status, xhr) {
-      $('#q').html(data.shops_list);
+      // console.log('success: ', data);
+      $('#food_items_list').html(data);
+    }).
+    on('ajax:error', function(xhr, status, error) {
+       console.log('error! : ', error);
+    });
+
+    $('#search').on('keyup', function(){
+      $('#search_form').submit();
+    })
+});
+$(function(){
+  $('#shop_search').
+    on('ajax:success', function(event, data, status, xhr) {
+      $('#shops_list').html(data.shops_list);
+    }).
+    on('ajax:error', function(xhr, status, error) {
+       console.log('error! : ', error);
+    });
 
   $('#q_name_cont').on('keyup', function(){
-    $('#food_item_search').submit();
+    $('#shop_search').submit();
   });
 
-
-  @q = FoodItem.search(params[:q])
-  @food_items = @q.result(distinct: true)
-  respond_with(@food_items)
+  $('#facilities input').on('click', function(){
+    $('#shop_search').submit();
+  });
 
