@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-// nav bar js
+//nav bar javascript
 $(document).ready(function() {
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
   $('#js-centered-navigation-menu').removeClass("show");
@@ -29,3 +29,20 @@ $(document).ready(function() {
     });
   });
 });
+
+
+//search food jscript
+$(function(){
+  $('#food_item_search').
+    on('ajax:success', function(event, data, status, xhr) {
+      $('#q').html(data.shops_list);
+
+  $('#q_name_cont').on('keyup', function(){
+    $('#food_item_search').submit();
+  });
+
+
+  @q = FoodItem.search(params[:q])
+  @food_items = @q.result(distinct: true)
+  respond_with(@food_items)
+

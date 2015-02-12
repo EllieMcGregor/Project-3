@@ -1,15 +1,13 @@
 <h1>Home = Listing food items in your fridge</h1>
 
 <%= search_form_for @q do |f| %>
-  <p>
-    <%= f.label :name_cont %>
-    <%= f.text_field :name_cont %>
-  </p>
-  <p>
+  <div class="filter name">
+    <%= f.text_field :name_cont, placeholder: "Search for food in your fridge " %>
+  </div>
+    <p>
     <%= f.submit %>
   </p>
 <% end %>
-
 
   <tbody>
     <% @food_items.each do |food_item| %>
@@ -21,5 +19,5 @@
 
 <br>
 
-<%= link_to 'New Food item', new_food_item_path %>
+<%= link_to 'New Food item', new_food_item_path %> |
 <%= link_to 'Back', food_items_path %>
