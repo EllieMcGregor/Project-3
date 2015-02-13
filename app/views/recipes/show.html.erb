@@ -1,42 +1,43 @@
-<p id="notice"><%= notice %></p>
+<div class="scroll-on-page">
+  <aside id="scroll-on-page-top">
+    <a class="scroll-on-page-link" href="#scroll-link-1">Name</a>
+    <a class="scroll-on-page-link" href="#scroll-link-2">Description</a>
+    <a class="scroll-on-page-link" href="#scroll-link-3">Ingredients</a>
+  </aside>
 
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
-
-<p>
-  <strong>Method:</strong>
-  <%= @recipe.method %>
-</p>
-
-<p>
-  <strong>Desciption:</strong>
-  <%= @recipe.desciption %>
-</p>
-
-<p>
-  <strong>Recipe image:</strong>
-  <%= @recipe.recipe_image %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @recipe.category %>
-</p>
-
-<p>
-  <strong>Ingredients:</strong>
-  <%= render @recipe.ingredients %>
-</p>
-<p>
-  <strong>Quantities of ingredients:</strong>
-  <%= render @recipe.quantities %>
-</p>
-
-
-
-
+  <article>
+    <p id="notice"><%= notice %></p>
+    <section>
+      <h4 id="scroll-link-1">Name</h4>
+      <p><%= @recipe.name %></p>
+    </section>
+    <section>
+      <h4 id="scroll-link-2">Method</h4>
+      <p><%= @recipe.method %></p>
+    </section>
+    <section>
+      <h4>Description</h4>
+      <p> <%= @recipe.desciption %></p>
+    </section>
+    <section>
+      <h4>Recipe Image</h4>
+      <p> <%= @recipe.recipe_image%> </p>
+    </section>
+    <section>
+      <h4>Category</h4>
+      <p> <%= @recipe.category  %></p>
+    </section>
+    <section>
+      <h4 id="scroll-link-3">Ingredients</h4>
+      <p> <%= render @recipe.ingredients   %></p>
+    </section>
+    <section>
+      <h4>Quantities of ingredients</h4>
+      <%= render @recipe.quantities %>
+      <a class="scroll-on-page-link" href="#scroll-on-page-top">Back to top</a>
+    </section>
+  </article>
+</div>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Destroy', recipe_path(@recipe),method: :delete, data: { confirm: 'Are you sure?' } %></td> |
