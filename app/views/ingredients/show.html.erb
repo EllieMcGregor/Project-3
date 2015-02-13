@@ -17,7 +17,7 @@
 
 <p>
   <strong>Calories per serving:</strong>
-  <%= @ingredient.nutrition.calorie %>
+  <%= @ingredient.nutrition.try :calorie %>
 </p>
 
 <%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
