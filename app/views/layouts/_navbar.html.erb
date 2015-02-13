@@ -18,19 +18,15 @@
       
         <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Favourites', favourites_path %></a></li>
         <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Sign Up', new_user_registration_path %></a></li>
-        <li class="nav-link"><a href="javascript:void(0)"><%= link_to "Sign In", new_user_session_path %></a></li>
-      </ul>
-    </nav>
-    <div class="navigation">
-      <div class='login'>
-        <% if current_user %>
+        <li class="nav-link"><a href="javascript:void(0)">
+          <% if current_user %>
           <span class="welcome"><%= "Hi, #{current_user.try(:first_name)}!" %></span>
           <%= image_tag current_user.try(:user_image), class: "avatar" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "sign-up" %>
         <% else %>
           <%= link_to "Sign In", new_user_session_path, class: "sign-up" %>
-        <% end %>
-      </div>
-    </div>
+        <% end %></a></li>
+      </ul>
+    </nav>
   </div>
 </header>

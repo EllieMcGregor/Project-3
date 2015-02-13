@@ -1,6 +1,6 @@
 class FavouritesController < ApplicationController
   before_action :set_favourite, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   respond_to :html
 
   def index
