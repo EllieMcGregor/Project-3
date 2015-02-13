@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'rails_12factor', group: :production
 gem 'rmagick'
 gem 'carrierwave', '0.9.0'
 gem 'ransack'
