@@ -1,6 +1,5 @@
 class FoodItemsController < ApplicationController
   before_action :set_food_item, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
   # user_signed_in?
   
   respond_to :html
