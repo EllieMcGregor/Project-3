@@ -25,7 +25,8 @@
   $footer-disclaimer-color: transparentize($footer-color, 0.6);
 
   background: $footer-background;
-  padding: 1em, 1em;
+  padding-bottom: 1em;
+  padding-top: 1em;
   width: 100%;
 
   .footer-logo {
