@@ -5,9 +5,9 @@ class RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
-    respond_with(@recipes)
     @recipes = Recipe.order(:created_at).page(params[:page])
-  end
+    respond_with(@recipes)
+end
 
   def show
     respond_with(@recipe)
