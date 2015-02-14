@@ -12,7 +12,7 @@
   <tbody>
     <% @favourites.each do |favourite| %>
       <tr>
-        <td><%= favourite.recipe.name %></td>
+        <td><%= favourite.try(:recipe).try(:name) %></td>
         <td><%= favourite.try(:user).try(:first_name) %></td>
         <td><%= link_to 'Show', favourite %></td>
         <td><%= link_to 'Edit', edit_favourite_path(favourite) %></td>
