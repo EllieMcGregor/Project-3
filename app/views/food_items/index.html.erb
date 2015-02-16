@@ -10,18 +10,16 @@
   </p>
 <% end %>
 
-  <tbody>
-    <% @food_items.each do |food_item| %>
-      <tr>
-          <% if food_item.food_item_image.detail.url %>
-               <p class="url-image"><%= link_to image_tag(food_item.food_item_image.detail.url), food_item.food_item_image.url %></p>
-             <% else %>
-               <p><img src="http://lorempixel.com/gray/400/200/food?v=<%= "#{food_item.id}" %>') no-repeat;background-size:cover;"></p>
-           <% end %>
-
-      </tr>
-    <% end %>
-  </tbody>
+<div class="food-images"></div>
+  <% @food_items.each do |food_item| %>
+      <% if food_item.food_item_image.detail.url %>
+          <p class="url-image"><%= link_to (food_item.food_item_image.detail.url), food_item.food_item_image.url %></p>
+      <% else %>
+           <p class="url-image"><img src="http://lorempixel.com/gray/400/200/food?v=<%= "#{food_item.id}" %>') no-repeat;backgrounsize:cover;"></p>
+      <% end %>
+  <% end %>
+</div>
+ 
 
 <br>
 
