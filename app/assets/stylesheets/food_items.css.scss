@@ -12,11 +12,16 @@
 }
 .url-image{
   display: inline;
-  margin: 0;
-  max-width: 65%;
-  display: inline-block;
-  opacity: 0.8;
+  // opacity: 0.8;
 }
 
+
+img,
+picture {
+  margin: 0;
+  max-width: 30%;
+  padding-right: 15px;
+  display: inline;
+}
 
 
