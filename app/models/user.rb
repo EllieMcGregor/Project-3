@@ -8,4 +8,11 @@ class User < ActiveRecord::Base
   has_many :recipes, through: :favourites
 
   has_many :food_items
+
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :password, length: { in: 8..20 }
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 end
