@@ -13,7 +13,12 @@
   <tbody>
     <% @food_items.each do |food_item| %>
       <tr>
-        <h2><%= link_to food_item.name, food_item_path(food_item) %>
+          <% if food_item.food_item_image.detail.url %>
+               <p class="url-image"><%= link_to image_tag(food_item.food_item_image.detail.url), food_item.food_item_image.url %></p>
+             <% else %>
+               <p><img src="http://lorempixel.com/gray/400/200/food?v=<%= "#{food_item.id}" %>') no-repeat;background-size:cover;"></p>
+           <% end %>
+
       </tr>
     <% end %>
   </tbody>
