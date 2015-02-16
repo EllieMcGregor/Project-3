@@ -1,6 +1,6 @@
 <h1>Your Fridge</h1>
 
-<section id="fridge-section">
+<div class="fridge">
 <%= search_form_for @q do |f| %>
   <div class="filter name">
     <%= f.text_field :name_or_ingredient_name_cont, placeholder: "Search for ingredients in fridge " %>
@@ -15,12 +15,13 @@
       <% if food_item.food_item_image.detail.url %>
           <p class="url-image"><%= link_to (food_item.food_item_image.detail.url), food_item_path(food_item)%></p>
       <% else %>
-           <p class="url-image"><%= link_to food_item.food_item_image, food_item_path(food_item) %><img src="http://lorempixel.com/gray/400/200/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"></p>
+           <p class="url-image"><img src="http://lorempixel.com/gray/400/200/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"></p>
       <% end %>
   <% end %>
-</section>
+
 
 <br>
 
 <%= link_to 'New Food item', new_food_item_path %> |
 <%= link_to 'Back', food_items_path %>
+</div>

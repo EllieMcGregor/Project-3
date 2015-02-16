@@ -3,10 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 // for index page
+.fridge {
+  background-image: url("http://thumbs.dreamstime.com/z/empty-fridge-inside-white-31661623.jpg");
+  background-image:no-repeat;
+  background-size:cover;
+  background-color: red;
+}
 .url-image{
   display: inline;
   margin: 0;
   max-width: 65%;
   display: inline-block;
 }
+
+
 
