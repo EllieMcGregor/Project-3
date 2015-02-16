@@ -7,7 +7,7 @@ class FoodItemsController < ApplicationController
   def index
    @q = FoodItem.search(params[:q])
    @food_items = @q.result(distinct: true)
- 
+ # render :partial => /index/
     @recipes = Recipe.order(:created_at).page(params[:page])
     respond_with(@food_items, @recipes)
     # @food_items = FoodItem.all
