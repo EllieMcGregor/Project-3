@@ -5,10 +5,11 @@ class FoodItemsController < ApplicationController
   respond_to :html
 
   def index
- @q = FoodItem.search(params[:q])
- @food_items = @q.result(distinct: true)
+   @q = FoodItem.search(params[:q])
+   @food_items = @q.result(distinct: true)
  
-    respond_with(@food_items)
+    @recipes = Recipe.order(:created_at).page(params[:page])
+    respond_with(@food_items, @recipes)
     # @food_items = FoodItem.all
     
   end

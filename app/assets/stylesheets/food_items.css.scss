@@ -5,23 +5,21 @@
 // for index page
 .fridge {
   background-image: url("http://thumbs.dreamstime.com/z/empty-fridge-inside-white-31661623.jpg");
-  background-image:no-repeat;
-  background-size:50%;
+  background-repeat: no-repeat;
+  // background-size:50%;
   position: relative;
+  min-height: 1200px;
+  max-width: 50%;
 
 }
 .url-image{
-  display: inline;
-  // opacity: 0.8;
+  // display: inline;
+  // width: 65%;
+  width: 200px;
+  height: 100px;
+  opacity: 0.5;
 }
 
 
-img,
-picture {
-  margin: 0;
-  max-width: 30%;
-  padding-right: 15px;
-  display: inline;
-}
 
 
