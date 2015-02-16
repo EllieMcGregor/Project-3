@@ -1,6 +1,6 @@
 <h1>Your Fridge</h1>
 
-<div class="fridge">
+
 <%= search_form_for @q do |f| %>
   <div class="filter name">
     <%= f.text_field :name_or_ingredient_name_cont, placeholder: "Search for ingredients in fridge " %>
@@ -9,7 +9,7 @@
     <%= f.submit %>
   </p>
 <% end %>
-
+<div class="fridge">
 <div class="food-images"></div>
   <% @food_items.each do |food_item| %>
       <% if food_item.food_item_image.detail.url %>
