@@ -13,12 +13,8 @@
 
 
   <div class="field">
-  
      <%= f.label :name %><br>
      <%= f.collection_check_boxes :name, FoodItem.all, :id, :name, :include_blank => true %>
-      
-      <!-- collection_check_boxes(:food_items, :name, Author.all) -->
-  
   </div>
 
 
