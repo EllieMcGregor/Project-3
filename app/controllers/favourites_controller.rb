@@ -22,7 +22,8 @@ class FavouritesController < ApplicationController
   end
 
   def create
-    @favourite = current_user.favourites.new(favourite_params)
+    @favourite =current_user.favorites.create(params[:user_id])
+
     @favourite.save
     respond_with(@favourite)
   end
