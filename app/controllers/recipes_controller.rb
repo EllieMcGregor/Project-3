@@ -5,9 +5,15 @@ class RecipesController < ApplicationController
 
   def index
     # @recipes = Recipe.all
-    @recipes = Recipe.order(:created_at).page(params[:page])
+    @q = Recipe.search(params[:q])
+    if params[:q]
+      @recipes = @q.result.includes(:ingredients).page(params[:page])
+    else
+      @recipes = Recipe.order(:created_at).page(params[:page])
+    end
+
     respond_with(@recipes)
-end
+  end
 
   def show
     respond_with(@recipe)

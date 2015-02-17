@@ -10,20 +10,23 @@
           <a href="javascript:void(0)" class="logo">
             <%= link_to image_tag("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_3_dark.png", class: "logo"), root_path %>
           </a>
-        </li>
-        <li class="nav-link"><a href="javascript:void(0)"><%= link_to "Your fridge", food_items_path%></a></li>
-        <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Recipes', recipes_path %></a></li>
+        </li>      
+        <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Search Recipes', recipes_path %></a></li>
+
+        <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Add a Recipe', new_recipe_path %></a></li>
         
-        <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Ingredients for recipes', ingredients_path %></a></li>
+        <!-- <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Ingredients', ingredients_path %></a></li> -->
       
-        <li class="nav-link"><a href="javascript:void(0)"><%= link_to "#{current_user.try(:first_name)} Favourites", favourites_path %></a></li>
-        <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Sign Up', new_user_registration_path %></a></li>
+        <li class="nav-link"><a href="javascript:void(0)"><%= link_to "Favourites", favourites_path %></a></li>
+        <li class="nav-link"><a href="javascript:void(0)"><%= link_to "Your fridge", food_items_path%></a></li>
+        
         <li class="nav-link"><a href="javascript:void(0)">
           <% if current_user %>
           <span class="welcome"><%= "Hi, #{current_user.try(:first_name)}!" %></span>
           <%= image_tag current_user.try(:user_image), class: "avatar" %>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "sign-up" %>
         <% else %>
+          <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Sign Up', new_user_registration_path %></a></li>
           <%= link_to "Sign In", new_user_session_path, class: "sign-up" %>
         <% end %></a></li>
       </ul>

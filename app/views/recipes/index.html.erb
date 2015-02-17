@@ -1,0 +1,35 @@
+<h1>Listing recipes</h1>
+<%= search_form_for @q do |f| %>
+  <div class="filter name">
+    <%= f.text_field :name_cont, placeholder: "Search for Recipes " %>
+  </div>
+    <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recipes.each do |recipe| %>
+    <tr>
+      <td><img src="http://fillmurray.com/100/100"></td>
+      <td><%= link_to recipe.name, recipe_path(recipe)%></td>
+      <td><%= link_to "View", recipe_path(recipe)%></td>
+      <td><%= link_to "Favourite", "#" %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @recipes %>
+<br>
+
+<%= link_to 'New Recipe', new_recipe_path %> |
+<%= link_to 'Back', food_items_path %>

@@ -1,10 +1,11 @@
-<div id="js-parallax-window" class="parallax-window-2">
+<!-- <div id="js-parallax-window" class="parallax-window-2">
   <div class="parallax-static-content">
     <h1 class="h1-parallax"><%= current_user.first_name %>'s Fridge</h1>
   </div>
   <div id="js-parallax-background" class="parallax-background-2"></div>
-</div> 
+</div>  -->
 
+<%= link_to 'Add Food Item', new_food_item_path %> 
 
 <%= search_form_for @q do |f| %>
   <div class="filter name">
@@ -15,7 +16,14 @@
   </p>
 <% end %>
 
-<div class="cf">
+<h1>Food Items that are in your fridge</h1>
+
+<% @food_items.each do |food_item |%>
+  <%= food_item.name %>
+  <%= link_to "View recipes", recipes_path(q: {name_cont:food_item.name}) %>
+<% end %>
+
+<!-- <div class="cf">
   <div class="fridge">
     <div class="food-images"></div>
      <% @food_items.each do |food_item| %>
@@ -28,7 +36,6 @@
   </div>
 
   <div class="recipe-index">
-    <%= render partial: "recipes/index" %>
+    <%#= render partial: "recipes/index" %>
   </div>
-  <%= link_to 'New Food Item', new_food_item_path %>
-</div>
+</div> -->

@@ -13,9 +13,33 @@
 
 
 <div class="field">
- <%= f.label :name %><br>
- <%= f.collection_check_boxes :name, FoodItem.all, :id, :name, :include_blank => true %>
+ <%#= label_tag :food_items %><br>
+ <%# FoodItem.all.each do |food_item| %>
+   <%#= label_tag food_item.name %>
+   <%#= check_box_tag "food_items[#{food_item.id}]", food_item.id, :name => "food_items[]" %>
+ <%# end %>
+ <%#= collection_check_boxes :food_items, FoodItem.all, :id, :name, :include_blank => true %>
 </div>
+
+<div class="field">
+   <%= f.label :name %><br>
+   <%= f.text_field :name %>
+</div>
+
+
+<div class="field">
+  <%= f.label :expiry_date %><br>
+  <%= f.number_field :expiry_date %>
+</div>
+<div class="field">
+  <%= f.label :food_item_image %><br>
+  <%= f.file_field :food_item_image %>
+</div>
+<div class="field">
+  <%= f.label :image_url %>
+  <%= f.text_field :remote_food_item_image_url %>
+</div>
+
 <div class="actions">
   <%= f.submit %>
 </div>

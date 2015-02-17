@@ -5,13 +5,18 @@ class FoodItemsController < ApplicationController
   respond_to :html
 
   def index
-   @q = FoodItem.search(params[:q])
-   @food_items = @q.result(distinct: true)
- # render :partial => /index/
-    @recipes = Recipe.order(:created_at).page(params[:page])
-    respond_with(@food_items, @recipes)
-    # @food_items = FoodItem.all
-    
+    # @q = FoodItem.search(params[:q])
+    # @food_items = @q.result(distinct: true)
+    # @recipes = Recipe.order(:created_at).page(params[:page])
+    # respond_with(@food_items, @recipes)
+
+    @q = current_user.food_items.search(params[:q])
+    if params[:q]
+      @food_items = @q.result(distinct: true).page(params[:page])
+    else 
+      @food_items = current_user.food_items.page(params[:page])
+    end
+    respond_with(@food_items)
   end
 
   def show
@@ -27,9 +32,9 @@ class FoodItemsController < ApplicationController
   end
 
   def create
-    @food_item = FoodItem.new(food_item_params)
+    @food_item = current_user.food_items.new(food_item_params)
     @food_item.save
-    respond_with(@food_item)
+    redirect_to food_items_path
   end
 
   def update
@@ -48,6 +53,6 @@ class FoodItemsController < ApplicationController
     end
 
     def food_item_params
-      params.require(:food_item).permit(:name, :expiry_date, :food_item_image, :remote_food_item_image_url, :user_id)
+      params.require(:food_item).permit(:name, :expiry_date, :food_item_image, :remote_food_item_image_url, :user_id, :food_items => [])
     end
 end
