@@ -5,6 +5,7 @@ class FavouritesController < ApplicationController
 
   def index
     @favourites = Favourite.all
+    @favourites = current_user.favourites
     respond_with(@favourites)
   end
 
@@ -21,7 +22,7 @@ class FavouritesController < ApplicationController
   end
 
   def create
-    @favourite = Favourite.new(favourite_params)
+    @favourite = current_user.favourites.new(favourite_params)
     @favourite.save
     respond_with(@favourite)
   end
