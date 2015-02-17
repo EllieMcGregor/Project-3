@@ -1,36 +1,36 @@
-<!-- <div id="js-parallax-window" class="parallax-window-2">
+<div id="js-parallax-window" class="parallax-window-2">
   <div class="parallax-static-content">
     <h1 class="h1-parallax"><%= current_user.first_name %>'s Fridge</h1>
   </div>
   <div id="js-parallax-background" class="parallax-background-2"></div>
-</div>  -->
+</div>  
 
+
+<h1>Food Items that are in your fridge</h1>
 <%= link_to 'Add Food Item', new_food_item_path %> 
 
 <%= search_form_for @q do |f| %>
-  <div class="filter name">
-    <%= f.text_field :name_or_ingredient_name_cont, placeholder: "Search for ingredients in fridge " %>
+  <div class="filter-name">
+    <%= f.text_field :name_or_ingredient_name_cont, placeholder: "Search for ingredients in fridge" %>
   </div>
     <p>
     <%= f.submit %>
-  </p>
+    </p>
 <% end %>
 
-<h1>Food Items that are in your fridge</h1>
 
 <% @food_items.each do |food_item |%>
-  <%= food_item.name %>
-  <%= link_to "View recipes", recipes_path(q: {name_cont:food_item.name}) %>
-<% end %>
-
+      <%= food_item.name %>
+    <% end %>
 <div class="cf">
   <div class="fridge">
     <div class="food-images"></div>
+    
      <% @food_items.each do |food_item| %>
          <% if food_item.food_item_image.detail.url %>
              <%= link_to image_tag(food_item.food_item_image.detail.url, class: "url-image"), food_item_path(food_item)%>
          <% else %>
-              <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;">
+              <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"><%= link_to "View recipes", recipes_path(q: {name_cont:food_item.name}) %>
          <% end %>
     <% end %>
   </div>
