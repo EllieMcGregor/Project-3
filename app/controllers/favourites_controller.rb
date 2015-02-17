@@ -4,7 +4,7 @@ class FavouritesController < ApplicationController
   respond_to :html
 
   def index
-    @favourites = Favourite.all
+    # @favourites = Favourite.all
     @favourites = current_user.favourites
     respond_with(@favourites)
   end
@@ -22,10 +22,10 @@ class FavouritesController < ApplicationController
   end
 
   def create
-    @favourite =current_user.favorites.create(params[:user_id])
+    @favourite = current_user.favourites.create(favourite_params)
 
     @favourite.save
-    respond_with(@favourite)
+    redirect_to recipes_path, {notice: "added to favourites"}
   end
 
   def update

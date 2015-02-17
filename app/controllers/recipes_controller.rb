@@ -11,7 +11,6 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.order(:created_at).page(params[:page])
     end
-
     respond_with(@recipes)
   end
 

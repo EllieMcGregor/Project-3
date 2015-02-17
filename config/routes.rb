@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :favourites
-
+  # post "/favourites", to: "favourites#create"
   resources :recipes
 
   resources :quantities

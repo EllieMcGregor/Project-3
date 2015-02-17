@@ -24,8 +24,7 @@
       <td><%= link_to "View", recipe_path(recipe)%></td>
       <!-- <td><%#= link_to "Favourite", new_favourite_path(favourite) %></td> -->
       <% if current_user %>
-        <%= link_to "favourite",   favourite_path(@recipe, type: "favourite"), method: :put %>
-        <%= link_to "unfavourite", favourite_path(@recipe, type: "unfavorite"), method: :put %>
+        <td><%= button_to "favourite", favourites_path(favourite: {recipe_id: recipe.id}) %></td>
       <% end %>
     </tr>
     <% end %>
