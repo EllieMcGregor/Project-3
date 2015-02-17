@@ -13,9 +13,20 @@
 
 
   <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  
+     <%= f.label :name %><br>
+     <%= f.collection_select :name, FoodItem.all, :id, :name, :include_blank => true %>
+      
+      <!-- collection_check_boxes(:food_items, :name, Author.all) -->
+  
   </div>
+
+
+
+
+
+
+
   <div class="field">
     <%= f.label :expiry_date %><br>
     <%= f.number_field :expiry_date %>

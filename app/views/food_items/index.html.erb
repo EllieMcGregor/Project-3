@@ -22,7 +22,7 @@
          <% if food_item.food_item_image.detail.url %>
              <%= link_to image_tag(food_item.food_item_image.detail.url, class: "url-image"), food_item_path(food_item)%>
          <% else %>
-              <img class="url-image" src="http://lorempixel.com/gray/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;">
+              <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;">
          <% end %>
     <% end %>
   </div>
@@ -30,4 +30,5 @@
   <div class="recipe-index">
     <%= render partial: "recipes/index" %>
   </div>
+  <%= link_to 'New Food Item', new_food_item_path %>
 </div>

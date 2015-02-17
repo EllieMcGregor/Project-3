@@ -41,7 +41,7 @@ $parallax-background-height: $parallax-window-height * 2;
   background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png") repeat;
   background-position: top;
   background-size: cover;
-  background-color: orange;
+  background-color: gray;
   height: $parallax-background-height;
   left: 0;
   position: absolute;
@@ -51,6 +51,7 @@ $parallax-background-height: $parallax-window-height * 2;
 
 .h1-parallax {
   font-size: 30px;
+  color: white;
 }
 
 
