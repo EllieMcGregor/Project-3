@@ -22,7 +22,6 @@
       <td><img src="http://fillmurray.com/100/100"></td>
       <td><%= link_to recipe.name, recipe_path(recipe)%></td>
       <td><%= link_to "View", recipe_path(recipe)%></td>
-      <!-- <td><%#= link_to "Favourite", new_favourite_path(favourite) %></td> -->
       <% if current_user %>
         <td><%= button_to "favourite", favourites_path(favourite: {recipe_id: recipe.id}) %></td>
       <% end %>

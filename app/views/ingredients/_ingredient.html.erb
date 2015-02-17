@@ -1,8 +1,8 @@
 <tr>
-  <td><%= ingredient.name %></td>
-  <td><%= ingredient.unit %></td>
+  <td><%= ingredient.name %>,</td>
+  <td><%= ingredient.unit %>,</td>
   <!-- <td><%= ingredient.default_expiry_in_days %></td> -->
-  <td><%= ingredient.nutrition.try :calorie %></td>
+  <td>Calories:<%= ingredient.nutrition.try :calorie %></td>
 <!--   <td><tr>
     <td><%= ingredient.nutrition.try(:ingredient).try(:name)  %></td>
     <td><%= ingredient.nutrition.try :serving %></td>
