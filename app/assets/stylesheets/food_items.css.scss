@@ -81,14 +81,15 @@ $parallax-background-height: $parallax-window-height * 2;
   margin-bottom: $base-line-height;
   
   @include media($medium-screen) {
-    width: 40%;
+    width: 100%;
+    display: inline-block;
   }
 
   .hover-tile-container {
     height: $hover-tile-height;
     overflow: hidden;
     width: 200px;
-    
+
   }
 
   .hover-tile-container:hover > .hover-tile {

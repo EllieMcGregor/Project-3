@@ -32,7 +32,8 @@
 
            <div class="hover-tile-container">
             
-             <div class="hover-tile hover-tile-visible"><img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"></div>
+             <div class="hover-tile hover-tile-visible">
+              <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"></div>
              <div class="hover-tile hover-tile-hidden">
             <%= link_to food_item.name %>
             <br>
@@ -42,6 +43,7 @@
                   </div>
                 </div>
               </div>
+              
          <% end %>
     <% end %>
   </div>
