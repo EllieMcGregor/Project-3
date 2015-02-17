@@ -19,18 +19,6 @@
 <% end %>
 
 
-<% @food_items.each do |food_item |%>
-<div class="hover-tile-outer">
-  <div class="hover-tile-container">
-    <div class="hover-tile hover-tile-visible"></div>
-    <div class="hover-tile hover-tile-hidden">
-      
-        <h4><%= food_item.name %></h4>
-    
-    </div>
-  </div>
-</div>
-<% end %>
 
 <div class="cf">
   <div class="fridge">
@@ -39,7 +27,18 @@
          <% if food_item.food_item_image.detail.url %>
              <%= link_to image_tag(food_item.food_item_image.detail.url, class: "url-image"), food_item_path(food_item)%>
          <% else %>
-              <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"><%= link_to "View recipes", recipes_path(q: {name_cont:food_item.name}) %>
+
+         <div class="hover-tile-outer">
+
+           <div class="hover-tile-container">
+            <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;">
+             <div class="hover-tile hover-tile-visible"></div>
+             <div class="hover-tile hover-tile-hidden">
+              
+            <%= link_to food_item.name, recipes_path(q: {name_cont:food_item.name}) %>
+                  </div>
+                </div>
+              </div>
          <% end %>
     <% end %>
   </div>
