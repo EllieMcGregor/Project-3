@@ -10,6 +10,8 @@ class Ability
       can :read, Quantity
       can :read, Ingredient
       can :edit, Favourite
+      can :edit, FoodItem
+      can :create, FoodItem
       can :read, FoodItem
       can :read, Recipe
       can :read, Nutrition
