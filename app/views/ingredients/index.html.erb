@@ -27,5 +27,5 @@
 
 <br>
 
-<%= link_to 'New Ingredient', new_ingredient_path %>
+<%= link_to 'New Ingredient', new_ingredient_path, if can? :create, Ingredient %>
 <%= link_to 'Back', food_items_path %>

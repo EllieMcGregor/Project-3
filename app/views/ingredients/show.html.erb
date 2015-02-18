@@ -20,5 +20,5 @@
   <%= @ingredient.nutrition.try :calorie %>
 </p>
 
-<%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
+<%= link_to 'Edit', edit_ingredient_path(@ingredient) if can? :edit, Ingredient %> |
 <%= link_to 'Back', ingredients_path %>

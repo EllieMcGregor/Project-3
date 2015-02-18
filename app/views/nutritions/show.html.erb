@@ -34,5 +34,5 @@
   <%= @nutrition.protein %>
 </p>
 
-<%= link_to 'Edit', edit_nutrition_path(@nutrition) %> |
+<%= link_to 'Edit', edit_nutrition_path(@nutrition) if can? :edit, Nutrition %> |
 <%= link_to 'Back', nutritions_path %>
