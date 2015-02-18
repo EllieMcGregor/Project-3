@@ -15,10 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-//= require typeahead.jquery.js
-
-
-//nav bar javascript
+//// nav bar
 $(document).ready(function() {
   var menuToggle = $('#js-centered-navigation-mobile-menu').unbind();
   $('#js-centered-navigation-menu').removeClass("show");
