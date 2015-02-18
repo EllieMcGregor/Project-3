@@ -7,10 +7,13 @@
 
   <article>
     <p id="notice"><%= notice %></p>
-    <section>
-      <h4 id="scroll-link-1">Name</h4>
-      <p><%= @recipe.name %></p>
-    </section>
+    <div id="js-parallax-window" class="parallax-window-3">
+      <div class="parallax-static-content">
+        <h1 class="h1-parallax-2"><%= @recipe.name %></h1>
+      </div>
+      <div id="js-parallax-background" class="parallax-background-3"></div>
+    </div>  
+
     <section>
       <h4 id="scroll-link-2">Method</h4>
       <p><%= @recipe.method %></p>
@@ -18,10 +21,6 @@
     <section>
       <h4>Description</h4>
       <p> <%= @recipe.desciption %></p>
-    </section>
-    <section>
-      <h4>Recipe Image</h4>
-      <p> <%= @recipe.recipe_image%> </p>
     </section>
     <section>
       <h4>Category</h4>

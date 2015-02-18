@@ -65,6 +65,33 @@ $parallax-background-height: $parallax-window-height * 2;
 }
 
 //////////////
+$parallax-window-height: 18em;
+$parallax-background-height: $parallax-window-height * 2;
+
+.parallax-window-3 {
+  max-height: $parallax-window-height;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.parallax-background-3 {
+  background: url("http://lorempixel.com/gray/400/200/food/") repeat;
+  background-position: top;
+  background-size: cover;
+  background-color: gray;
+  height: $parallax-background-height;
+  left: 0;
+  position: absolute;
+  top: - $parallax-window-height / 3;
+  width: 100%;
+}
+.h1-parallax-2 {
+  font-size: 30px;
+  color: #2C3539;
+}
+//////////////
 .hover-tile-outer {
   ///////////////////////////////////////////////////////////////////////////////////
   $base-border-color: gainsboro !default;
