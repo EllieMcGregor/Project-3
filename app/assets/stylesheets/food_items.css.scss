@@ -6,11 +6,13 @@
 .fridge {
   background-image: url("http://thumbs.dreamstime.com/z/empty-fridge-inside-white-31661623.jpg");
   background-repeat: no-repeat;
+  margin: 0 auto; 
   // background-size:50%;
   position: relative;
   min-height: 1200px;
-  max-width: 50%;
-  float: left;
+  max-width: 70%;
+  // float: left;
+  margin: 0 auto;
 
 }
 .url-image{
@@ -121,6 +123,10 @@ $parallax-background-height: $parallax-window-height * 2;
 
 //////////////
 
+// .centered-fridge-section{
+//   text-align: center;
+// }
+//////////////
 .filter-name {
    width: 50%;
 }
