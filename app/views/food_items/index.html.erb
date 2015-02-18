@@ -33,11 +33,11 @@
              <div class="hover-tile hover-tile-visible">
               <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"></div>
              <div class="hover-tile hover-tile-hidden">
-            <%= link_to food_item.name %>
+            <%= link_to food_item.name, class: "recipe-search" %>
             <br>
             <br>
             <br>
-            <%= link_to "Search for recipes with #{food_item.name} in", recipes_path(q: {name_cont_any:food_item.name}) %>
+            <%= link_to "Search for recipes with #{food_item.name} in", recipes_path(q: {name_cont_any:food_item.name}), class: "recipe-search" %>
                   </div>
                 </div>
               </div>
