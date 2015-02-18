@@ -15,6 +15,11 @@
   margin: 0 auto;
 
 }
+.add-food-item {
+  float: right;
+}
+
+
 .url-image{
   width: 200px;
   height: 150px;
@@ -129,6 +134,13 @@ $parallax-background-height: $parallax-window-height * 2;
 //////////////
 .filter-name {
    width: 50%;
+   width: 54%;
+   margin: 0 auto;
+   padding-top: 22px;
+}
+
+.submit-button {
+  text-align: center;
 }
 
 
