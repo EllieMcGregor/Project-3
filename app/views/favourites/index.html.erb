@@ -8,7 +8,7 @@
   <tbody>
     <% @favourites.each do |favourite| %>
       <tr>
-        <td><%= link_to favourite.try(:recipe).try(:name), favourite %></td>
+        <td><%= link_to favourite.try(:recipe).try(:name), favourite.recipe %></td>
         <td class="remove"><%= link_to 'Remove', favourite, method: :delete, data: { confirm: "#{current_user.first_name}" " why dont you love me anymore? Fine. Delete me" } %></td>
       </tr>
     <% end %>
