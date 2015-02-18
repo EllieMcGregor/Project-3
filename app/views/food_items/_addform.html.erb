@@ -13,15 +13,6 @@
 
 
 <div class="field">
- <%#= label_tag :food_items %><br>
- <%# FoodItem.all.each do |food_item| %>
-   <%#= label_tag food_item.name %>
-   <%#= check_box_tag "food_items[#{food_item.id}]", food_item.id, :name => "food_items[]" %>
- <%# end %>
- <%#= collection_check_boxes :food_items, FoodItem.all, :id, :name, :include_blank => true %>
-</div>
-
-<div class="field">
    <%= f.label :name %><br>
    <%= f.text_field :name %>
 </div>
