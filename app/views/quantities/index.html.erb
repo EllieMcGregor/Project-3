@@ -17,5 +17,5 @@
 
 <br>
 
-<%= link_to 'New Quantity', new_quantity_path %>
+<%= link_to 'New Quantity', new_quantity_path, if can? :create, Quantity %>
 <%= link_to 'Back', food_items_path %>

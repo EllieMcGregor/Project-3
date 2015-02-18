@@ -15,5 +15,5 @@
   <%= @quantity.amount %>
 </p>
 
-<%= link_to 'Edit', edit_quantity_path(@quantity) %> |
+<%= link_to 'Edit', edit_quantity_path(@quantity), if can? :edit, Quantity %> |
 <%= link_to 'Back', quantities_path %>
