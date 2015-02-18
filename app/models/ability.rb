@@ -6,6 +6,7 @@ class Ability
     if user.role? :admin
       can :manage, :all
     else
+      can :destroy, FoodItem
       can :read, Quantity
       can :read, Ingredient
       can :edit, Favourite
