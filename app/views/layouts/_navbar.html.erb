@@ -15,7 +15,6 @@
         <!-- <li class="nav-link"><a href="javascript:void(0)"> -->
         <% if current_user %>
           <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Search Recipes', recipes_path %></a></li>
-          <li class="nav-link"><a href="javascript:void(0)"><%= link_to 'Add a Recipe', new_recipe_path %></a></li>
           <li class="nav-link"><a href="javascript:void(0)"><%= link_to "Your fridge", food_items_path%></a></li>
           <li class="nav-link"><a href="javascript:void(0)"><%= link_to "Favourites", favourites_path %></a></li>
           <span class="welcome"><%= "Hi, #{current_user.try(:first_name)}!" %></span>
