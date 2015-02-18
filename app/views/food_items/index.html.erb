@@ -1,48 +1,49 @@
 <div id="js-parallax-window" class="parallax-window-2">
-  <div class="parallax-static-content">
+  <div class="parallax-static-content-1">
     <h1 class="h1-parallax"><%= current_user.first_name %>'s Fridge</h1>
+    <%= search_form_for @q do |f| %>
+    <div class="filter-name">
+      <%= f.text_field :name_or_ingredient_name_cont_any, placeholder: "Search for ingredients in fridge" %>
+    </div>
+    <p class="submit-button">
+      <%= f.submit %>
+    </p>
+    <% end %>
   </div>
   <div id="js-parallax-background" class="parallax-background-2"></div>
 </div>  
 
 <div class="add-food-item"><%= link_to 'Add Food Item', new_food_item_path %> </div>
 
-<%= search_form_for @q do |f| %>
-  <div class="filter-name">
-    <%= f.text_field :name_or_ingredient_name_cont_any, placeholder: "Search for ingredients in fridge" %>
-  </div>
-    <p class="submit-button">
-    <%= f.submit %>
-    </p>
-<% end %>
+
 
 
 
 <div class="cf">
   <div class="fridge">
     <div class="food-images"></div>
-     <% @food_items.each do |food_item| %>
-         <% if food_item.food_item_image.detail.url %>
-             <%= link_to image_tag(food_item.food_item_image.detail.url, class: "url-image"), food_item_path(food_item)%>
-         <% else %>
+    <% @food_items.each do |food_item| %>
+    <% if food_item.food_item_image.detail.url %>
+    <%= link_to image_tag(food_item.food_item_image.detail.url, class: "url-image"), food_item_path(food_item)%>
+    <% else %>
 
-         <div class="hover-tile-outer">
+    <div class="hover-tile-outer">
 
-           <div class="hover-tile-container">
-            
-             <div class="hover-tile hover-tile-visible">
-              <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"></div>
-             <div class="hover-tile hover-tile-hidden">
-            <%= link_to food_item.name, food_item_path(food_item), class: "recipe-search" %>
-            <br>
-            <br>
-            <br>
-            <%= link_to "Search for recipes with #{food_item.name} in", recipes_path(q: {name_cont_any:food_item.name}), class: "recipe-search" %>
-                  </div>
-                </div>
-              </div>
-              
-         <% end %>
+     <div class="hover-tile-container">
+
+       <div class="hover-tile hover-tile-visible">
+        <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{food_item.id}" %>') no-repeat;backgroundsize:cover;"></div>
+        <div class="hover-tile hover-tile-hidden">
+          <%= link_to food_item.name, food_item_path(food_item), class: "recipe-search" %>
+          <br>
+          <br>
+          <br>
+          <%= link_to "Search for recipes with #{food_item.name} in", recipes_path(q: {name_cont_any:food_item.name}), class: "recipe-search" %>
+        </div>
+      </div>
+    </div>
+
+    <% end %>
     <% end %>
   </div>
 
