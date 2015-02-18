@@ -5,6 +5,11 @@ class RecipesController < ApplicationController
 
   def index
     # @recipes = Recipe.all
+    
+    if params[:q] && params[:q][:name_cont_any]
+      params[:q][:name_cont_any] = params[:q][:name_cont_any].split
+    end
+
     @q = Recipe.search(params[:q])
     if params[:q]
       @recipes = @q.result.includes(:ingredients).page(params[:page])

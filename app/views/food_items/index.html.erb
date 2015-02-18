@@ -9,7 +9,7 @@
 
 <%= search_form_for @q do |f| %>
   <div class="filter-name">
-    <%= f.text_field :name_or_ingredient_name_cont, placeholder: "Search for ingredients in fridge" %>
+    <%= f.text_field :name_or_ingredient_name_cont_any, placeholder: "Search for ingredients in fridge" %>
   </div>
     <p class="submit-button">
     <%= f.submit %>
@@ -37,7 +37,7 @@
             <br>
             <br>
             <br>
-            <%= link_to "Search for recipes with #{food_item.name} in", recipes_path(q: {name_cont:food_item.name}) %>
+            <%= link_to "Search for recipes with #{food_item.name} in", recipes_path(q: {name_cont_any:food_item.name}) %>
                   </div>
                 </div>
               </div>
