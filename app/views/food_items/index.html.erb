@@ -3,7 +3,7 @@
     <h1 class="h1-parallax"><%= current_user.first_name %>'s Fridge</h1>
     <%= search_form_for @q do |f| %>
     <div class="filter-name">
-      <%= f.text_field :name_or_ingredient_name_cont_any, placeholder: "Search for ingredients in fridge" %>
+      <%= f.text_field :name_or_ingredient_name_cont, placeholder: "Search for ingredients in fridge" %>
     </div>
     <p class="submit-button">
       <%= f.submit %>

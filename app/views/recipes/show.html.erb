@@ -36,9 +36,9 @@
       <p><%= render @recipe.quantities %></p>
       <a class="scroll-on-page-link" href="#scroll-on-page-top">Back to top</a>
     </section>
+    
   </article>
 </div>
-
 <%= link_to 'Edit', edit_recipe_path(@recipe) if can? :edit, Recipe %> |
 <%= link_to 'Destroy', recipe_path(@recipe),method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, Recipe %></td> |
 <%= link_to 'Back', recipes_path %>
