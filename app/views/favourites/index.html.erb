@@ -1,21 +1,15 @@
-<h1>Listing favourites</h1>
-
 <table>
   <thead>
-    <tr>
-      <th>Recipe</th>
-      <th>User</th>
-      <th colspan="2"></th>
+    <tr class="center">
+      <th colspan="2">Favourite Recipes</th>
     </tr>
   </thead>
 
   <tbody>
     <% @favourites.each do |favourite| %>
       <tr>
-        <td><%= favourite.try(:recipe).try(:name) %></td>
-        <td><%= favourite.try(:user).try(:first_name) %></td>
-        <td><%= link_to 'Show', favourite %></td>
-        <td><%= link_to 'Destroy', favourite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to favourite.try(:recipe).try(:name), favourite %></td>
+        <td class="remove"><%= link_to 'Remove', favourite, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +18,4 @@
 <br>
 
 
-<%= link_to 'Back', food_items_path %>
+<%= link_to 'Back', food_items_path, class: "back" %>
