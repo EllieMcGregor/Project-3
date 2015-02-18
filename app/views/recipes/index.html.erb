@@ -1,27 +1,25 @@
-<h1>Listing recipes</h1>
+
+<div id="js-parallax-window" class="parallax-window-2">
+  <div class="parallax-static-content">
 <%= search_form_for @q do |f| %>
-  <div class="filter name">
+  <div class="filter-name">
+    <!-- <h1>Listing recipes</h1> -->
     <%= f.text_field :name_cont, placeholder: "Search for Recipes " %>
   </div>
-    <p>
+    <p class="submit-button">
     <%= f.submit %>
   </p>
 <% end %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="6"></th>
-    </tr>
-  </thead>
+</div>
+  <div id="js-parallax-background" class="parallax-background-2"></div>
+</div> 
+<table class="recipe-table">
 
   <tbody>
     <% @recipes.each do |recipe| %>
     <tr>
       <td><img src="http://fillmurray.com/100/100"></td>
       <td><%= link_to recipe.name, recipe_path(recipe)%></td>
-      <td><%= link_to "View", recipe_path(recipe)%></td>
       <% if current_user %>
         <td><%= button_to "favourite", favourites_path(favourite: {recipe_id: recipe.id}) %></td>
       <% end %>
