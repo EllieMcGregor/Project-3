@@ -89,7 +89,7 @@ $parallax-background-height: $parallax-window-height * 2;
 }
 .h1-parallax-2 {
   font-size: 30px;
-  color: #2C3539;
+  color: white;
 }
 //////////////
 .hover-tile-outer {
@@ -118,8 +118,10 @@ $parallax-background-height: $parallax-window-height * 2;
   margin-bottom: $base-line-height;
   
   @include media($medium-screen) {
-    width: 100%;
+    width: 28.2%;
     display: inline-block;
+    text-align: center;
+    margin-right: 33px;
   }
 
   .hover-tile-container {

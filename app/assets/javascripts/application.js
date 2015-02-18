@@ -31,7 +31,7 @@ $(document).ready(function() {
 });
 
 
-//search food jscript
+/////////////search food jscript
 $(function(){
   $('#search_form').
     on('ajax:success', function(event, data, status, xhr) {
@@ -42,11 +42,11 @@ $(function(){
        console.log('error! : ', error);
     });
 
-    $('#search').on('keyup', function(){
+    $('#q').on('keyup', function(){
       $('#search_form').submit();
     })
 });
-
+//////////////////
 $(document).ready(function() {
   if ($("#js-parallax-window").length) {
     parallax();
