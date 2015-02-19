@@ -18,7 +18,7 @@
   <tbody>
     <% @recipes.each do |recipe| %>
     <tr>
-      <td><img src="http://fillmurray.com/100/100"></td>
+      <td><img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{recipe.id}" %>') no-repeat;backgroundsize:cover;"></td>
       <td><%= link_to recipe.name, recipe_path(recipe)%></td>
       <% if current_user %>
         <td><%= button_to "favourite", favourites_path(favourite: {recipe_id: recipe.id}) %></td>
