@@ -217,6 +217,10 @@ $base-accent-color: #477dca !default;
           animation-name: zoomOut;
 }
 
+.scroll-button {
+
+}
+
 /////////////////////////////////////////////////////////////
 
 .animate-target {
@@ -230,6 +234,14 @@ $base-accent-color: #477dca !default;
 
 button {
   @include button(flat, $base-accent-color);
+  display: block;
+  margin: auto;
+  outline: none;
+  padding: 0.8em 1em;
+  text-align: center;
+}
+.scroll-button {
+  @include button(flat, white);
   display: block;
   margin: auto;
   outline: none;
