@@ -4,8 +4,9 @@
 
 // for index page
 .fridge {
-  background-image: url("http://thumbs.dreamstime.com/z/empty-fridge-inside-white-31661623.jpg");
+  background: url('http://i.imgur.com/3bkhZp5.jpg?1');
   background-repeat: no-repeat;
+  background-position: center;
   margin: 0 auto; 
   // background-size:50%;
   position: relative;
@@ -123,7 +124,8 @@ $parallax-background-height: $parallax-window-height * 2;
     width: 23%;
     display: inline-block;
     text-align: center;
-    margin-right: 33px;
+    margin-right: -11px;
+    margin-left: 73px;
   }
 
   .hover-tile-container {
@@ -157,6 +159,10 @@ $parallax-background-height: $parallax-window-height * 2;
       margin-bottom: 0.5em;
     }
   }
+}
+
+.food-items-show {
+  text-align: center;
 }
 
 

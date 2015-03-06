@@ -1,3 +1,4 @@
+<div class="food-items-show"
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -10,7 +11,6 @@
   <%= @food_item.expiry_date%> days
 </p>
 <p>
-  <strong>Food item image:</strong>
   <img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{@food_item.id}" %>') no-repeat;backgroundsize:cover;">
 </p>
 
@@ -20,3 +20,4 @@
 <%= link_to 'Edit', edit_food_item_path(@food_item) if can? :edit, FoodItem %> |
 <td> <%= link_to 'Delete', @food_item, method: :delete, data: { confirm: "Are you sure you want to delete" " #{@food_item.name}?"} if can? :destroy, FoodItem %></h3></td> |
 <%= link_to 'Back', food_items_path %>
+</div>
