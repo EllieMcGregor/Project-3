@@ -15,9 +15,11 @@ Quantity.delete_all
 Nutrition.delete_all
 Favourite.delete_all
 
-units = ["grams", "teaspoons", "cup", "ounce", "pint"]
+units = ["grams", "teaspoons", "cup", "ounce", "pint", "kg"]
 
-foodnames = ["apple", "oranges", "chicken breast", "beef steak", "Tomatoes", "Rocket Salad", "whole chicken", "chicken stock", "salmon fillet", "Bell peppers", "Haddock"]
+expiry_date = [1, 2, 3, 4, 5]
+
+foodnames = ["apple", "oranges", "chicken breast", "beef steak", "Tomatoes", "Rocket Salad", "whole chicken", "chicken stock", "salmon fillet", "Bell peppers", "Haddock", "Kale"]
 
 recipes = ["Chicken Pie", "Beef Pie", "Chicken Salad", "Beef Burrito", "Haddock and Potatoes", "Fajitas", "Salmon Curry"]
 
@@ -48,7 +50,7 @@ ingredient = ingredients.sample
 puts "Creating Food items"
 
 30.times do
-  food_item = FoodItem.create!(name: foodnames.sample, expiry_date: "#{Faker::Date.forward(5)}", food_item_image: "#{Faker::Avatar.image}", user: users.sample)
+  food_item = FoodItem.create!(name: foodnames.sample, expiry_date: expiry_date.sample, food_item_image: "#{Faker::Avatar.image}", user: users.sample)
 end
 
 puts "Creating Recipes"

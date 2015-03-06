@@ -1,0 +1,5 @@
+<div class="result_info">
+  <%= page_entries_info @recipes %>
+  <%= sort_link(@q, :name, 'By Name', default_order: :asc) %>
+  <%= sort_link(@q, :calorie, 'Calories', default_order: :desc) %>
+</div>
