@@ -7,7 +7,7 @@
   //////////////////////////////////////////////////////////////////////////////////
 
   $centered-navigation-padding: 1em;
-  $centered-navigation-logo-height: 2.3em;
+  $centered-navigation-logo-height: 3em;
   $centered-navigation-background:  #2C3539;
   $centered-navigation-color: transparentize(#FFFFFF , 0.3);
   $centered-navigation-color-hover: #FFFFFF ;
@@ -149,7 +149,7 @@
   }
 
   .logo img {
-    margin-bottom: -$centered-navigation-logo-height / 3;
+    margin-bottom:  -1.1333em;
     max-height: $centered-navigation-logo-height;
     opacity: 0.6;
   }
