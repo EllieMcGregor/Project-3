@@ -1,21 +1,7 @@
-
-<div id="js-parallax-window" class="parallax-window-2">
-  <div class="parallax-static-content">
-<%= search_form_for @q do |f| %>
-  <div class="filter-name">
-    <!-- <h1>Listing recipes</h1> -->
-    <%= f.text_field :name_cont, placeholder: "Search for Recipes " %>
-  </div>
-    <p class="submit-button">
-    <%= f.submit %>
-  </p>
-<% end %>
-</div>
-  <div id="js-parallax-background" class="parallax-background-2"></div>
-</div> 
+<%= render partial: 'recipe_search' %>
 <table class="recipe-table">
 
-<%= render partial: 'sort_by' %>
+  <%= render partial: 'sort_by' %>
 
 
   <tbody>
@@ -24,7 +10,7 @@
       <td><img class="url-image" src="http://lorempixel.com/200/100/food?v=<%= "#{recipe.id}" %>') no-repeat;backgroundsize:cover;"></td>
       <td><%= link_to recipe.name, recipe_path(recipe)%></td>
       <% if current_user %>
-        <td><%= button_to "favourite", favourites_path(favourite: {recipe_id: recipe.id}) %></td>
+      <td><%= button_to "favourite", favourites_path(favourite: {recipe_id: recipe.id}) %></td>
       <% end %>
     </tr>
     <% end %>
