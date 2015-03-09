@@ -1,0 +1,15 @@
+<div id="js-parallax-window" class="parallax-window-2">
+  <div class="parallax-static-content-1">
+    <h1 class="h1-parallax"><%= current_user.first_name %>'s Fridge</h1>
+    <%= search_form_for @q do |f| %>
+    <div class="filter-name">
+      <%= f.text_field :name_or_ingredient_name_cont, placeholder: "Search for ingredients in fridge" %>
+    </div>
+    <p class="submit-button">
+      <%= f.submit %>
+    </p>
+    <% end %>
+  <div class="add-food-item"><%= link_to 'Add Food Item', new_food_item_path %> </div>
+</div>
+  <div id="js-parallax-background" class="parallax-background-2"></div>
+</div>  
