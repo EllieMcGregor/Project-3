@@ -1,6 +1,7 @@
 footer {
     padding: 25px 0;
     text-align: center;
+    background-color: transparentize(#2C3539, 0.1);
 }
 
 footer span.copyright {
@@ -8,4 +9,6 @@ footer span.copyright {
     text-transform: none;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     line-height: 40px;
+    color: transparentize(white, 0.3);
 }
+
