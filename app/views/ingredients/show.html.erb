@@ -1,3 +1,4 @@
+<div class="food-items-show">
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -6,14 +7,14 @@
 </p>
 
 <p>
-  <strong>Unit:</strong>
+  <strong>Measurement:</strong>
   <%= @ingredient.unit %>
 </p>
-
+<!-- 
 <p>
   <strong>Default expiry in days:</strong>
   <%= @ingredient.default_expiry_in_days %>
-</p>
+</p> -->
 
 <p>
   <strong>Calories per serving:</strong>
@@ -21,4 +22,5 @@
 </p>
 
 <%= link_to 'Edit', edit_ingredient_path(@ingredient) if can? :edit, Ingredient %> |
-<%= link_to 'Back', ingredients_path %>
+<%= link_to 'Back', recipes_path %>
+</div>
